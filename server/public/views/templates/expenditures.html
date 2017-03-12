@@ -1,0 +1,82 @@
+<h1>Monthly Expenditures</h1>
+<!-- shows expediture and budget calculations on DOM -->
+<div>
+  <div>
+<!-- cpmpleted line / uncomment when bedget is complete     -->
+    <!-- <h3>Budget (Monthly): {{ec.budget.list[0].monthly_budget}}</h3> -->
+  </div>
+  <div>
+    <h3>Total Expenditure (Monthly): {{ec.calculateExpenditure()}}</h3>
+  </div>
+</div>
+<!-- inputs/button -->
+<div>
+  <form>
+    <h3>Add New Employee:</h3>
+<!-- firstName -->
+    <div>
+      <label>First Name</label><br>
+      <input ng-model="ec.newEmployee.first_name" placeholder="First Name">
+    </div>
+<!-- lastName -->
+    <div>
+      <label>Last name</label><br>
+      <input ng-model="ec.newEmployee.last_name" placeholder = "Last Name">
+    </div>
+<!-- idNumber -->
+    <div>
+      <label>ID Number</label><br>
+      <input ng-model="ec.newEmployee.id_number" placeholder="ID Number">
+    </div>
+<!-- jobTitle -->
+    <div>
+      <label>Job Title</label><br>
+      <input ng-model="ec.newEmployee.job_title" placeholder="Job Title">
+    </div>
+<!-- annualSalary -->
+    <div>
+      <label>Annual Salary</label><br>
+      <input ng-model="ec.newEmployee.annual_salary" placeholder="Annual Salary">
+    </div>
+<!-- submit employee -->
+    <div>
+      <button id="submitButtonExpeditures" ng-click="ec.addEmployee()">Submit Employee</button>
+    </div>
+  </form>
+</div>
+<!-- employee activity view -->
+<div>
+  <h3>Employee Expenditure Chart</h3>
+<!-- container table from database-->
+  <table align = "center">
+<!-- table column titles -->
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>ID Number</th>
+      <th>Job Title</th>
+      <th>Annual Salary</th>
+      <th>Active/Inactive</th>
+    </tr>
+<!-- active table styling -->
+    <tr ng-repeat="employee in ec.expendituresList.list" ng-show="employee.active" ng-class="{ active: employee.active }">
+      <td>{{employee.first_name}}</td>
+      <td>{{employee.last_name}}</td>
+      <td>{{employee.id_number}}</td>
+      <td>{{employee.job_title}}</td>
+      <td>{{employee.annual_salary}}</td>
+<!-- button click listener/change-->
+      <td><button ng-click="ec.statusChangeInactive(employee.id)" type="button" name="button">Set Inactive</button></td>
+    </tr>
+<!-- inactive table styling -->
+    <tr ng-repeat="employee in ec.expendituresList.list" ng-hide="employee.active" ng-class="{ inactive: !employee.active }">
+      <td>{{employee.first_name}}</td>
+      <td>{{employee.last_name}}</td>
+      <td>{{employee.id_number}}</td>
+      <td>{{employee.job_title}}</td>
+      <td>{{employee.annual_salary}}</td>
+<!-- button click listener/change-->
+      <td><button ng-click="ec.statusChangeActive(employee.id)" type="button" name="button">Set Active</button></td>
+    </tr>
+  </table>
+</div>
