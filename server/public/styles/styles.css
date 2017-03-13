@@ -1,0 +1,92 @@
+
+/*nav view*/
+.views {
+  font-size: 20px;
+  box-shadow: 0px 1px 2px 1px rgba(135, 182, 245, 0.1) inset, 0px -2px 20px #500cf6, 0px 1px 5px rgba(135, 182, 245, 0.1), 0px 2px 10px rgba(135, 182, 245, 0.1);
+  color: #500cf6;
+  background-color: #696868;
+}
+
+/*nav text*/
+#liNav {
+  color: #500cf6;
+  background-color: #000000;
+}
+
+/*activity button*/
+.activation {
+  width: 100px;
+  height: 30px;
+  background-color: #696868;
+  color: #500cf6;
+  outline: none;
+  margin: 3px;
+}
+
+body {
+  /*background-color: #959595;*/
+  align-items: center;
+  background-image: url('../assets/images/background.jpeg');
+  background-size: 100%;
+}
+
+h1{
+  font-family: fantasy;
+  text-align: center;
+  font-size: 60px;
+  margin-top: 50px;
+  color: #500cf6;
+}
+
+h3 {
+  font-size: 30px;
+  margin: 38px 0px 30px 20px;
+  color: #500cf6;
+}
+
+/*input div container*/
+.inputDiv {
+  display: inline-block;
+  padding: 0px 10px 0px 10px;
+  text-align: center;
+  /*background-color: transparent;*/
+  color: black;
+}
+
+/*input element*/
+#inputs {
+  background-color: #959595;
+  border: 1px solid black;
+}
+
+/*button on click*/
+button:active{
+  background-color: #000000;
+  box-shadow: 0px 1px 2px rgba(135, 182, 245, 0.1) inset, 0px -2px 20px #500cf6, 0px 1px 5px rgba(135, 182, 245, 0.1), 0px 2px 10px rgba(135, 182, 245, 0.1);
+}
+
+/*submit button div container*/
+.submitButtonContainer {
+  text-align: right;
+  margin-right: 30px;
+}
+
+/*submitButton element*/
+#submitButton {
+  background-color: #696868;
+  color: #500cf6;
+  margin: 10px;
+  outline: none;
+}
+
+/*table colomn headings*/
+th {
+  font-size: 15px;
+  color: black;
+}
+
+/*employee data table*/
+table {
+  width: 90%;
+  color: #d41d1d;
+}

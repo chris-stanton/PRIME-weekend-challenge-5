@@ -1,52 +1,50 @@
 <h1>Monthly Expenditures</h1>
 <!-- shows expediture and budget calculations on DOM -->
-<div>
+<!-- <div>
   <div>
-<!-- cpmpleted line / uncomment when bedget is complete     -->
-    <!-- <h3>Budget (Monthly): {{ec.budget.list[0].monthly_budget}}</h3> -->
+completed line / uncomment when bedget is complete
+    <h3>Budget (Monthly): {{ec.budget.list[0].monthly_budget}}</h3>
   </div>
   <div>
     <h3>Total Expenditure (Monthly): {{ec.calculateExpenditure()}}</h3>
   </div>
-</div>
+</div> -->
 <!-- inputs/button -->
-<div>
-  <form>
+<div id="inputContainer">
     <h3>Add New Employee:</h3>
 <!-- firstName -->
-    <div>
+    <div class="inputDiv">
       <label>First Name</label><br>
-      <input ng-model="ec.newEmployee.first_name" placeholder="First Name">
+      <input ng-model="ec.newEmployee.first_name" placeholder="First Name" id="inputs">
     </div>
 <!-- lastName -->
-    <div>
+    <div class="inputDiv">
       <label>Last name</label><br>
-      <input ng-model="ec.newEmployee.last_name" placeholder = "Last Name">
+      <input ng-model="ec.newEmployee.last_name" placeholder = "Last Name" id="inputs">
     </div>
 <!-- idNumber -->
-    <div>
+    <div class="inputDiv">
       <label>ID Number</label><br>
-      <input ng-model="ec.newEmployee.id_number" placeholder="ID Number">
+      <input ng-model="ec.newEmployee.id_number" placeholder="ID Number" id="inputs">
     </div>
 <!-- jobTitle -->
-    <div>
+    <div class="inputDiv">
       <label>Job Title</label><br>
-      <input ng-model="ec.newEmployee.job_title" placeholder="Job Title">
+      <input ng-model="ec.newEmployee.job_title" placeholder="Job Title" id="inputs">
     </div>
 <!-- annualSalary -->
-    <div>
+    <div class="inputDiv">
       <label>Annual Salary</label><br>
-      <input ng-model="ec.newEmployee.annual_salary" placeholder="Annual Salary">
+      <input ng-model="ec.newEmployee.annual_salary" placeholder="Annual Salary" id="inputs">
     </div>
 <!-- submit employee -->
-    <div>
-      <button id="submitButtonExpeditures" ng-click="ec.addEmployee()">Submit Employee</button>
+    <div class="submitButtonContainer">
+      <button ng-click="ec.addEmployee()" id="submitButton">Submit Employee</button>
     </div>
-  </form>
 </div>
 <!-- employee activity view -->
 <div>
-  <h3>Employee Expenditure Chart</h3>
+  <h3>Employee Expenditure Chart:</h3>
 <!-- container table from database-->
   <table align = "center">
 <!-- table column titles -->
@@ -66,7 +64,7 @@
       <td>{{employee.job_title}}</td>
       <td>{{employee.annual_salary}}</td>
 <!-- button click listener/change-->
-      <td><button ng-click="ec.statusChangeInactive(employee.id)" type="button" name="button">Set Inactive</button></td>
+      <td><button ng-click="ec.statusChangeInactive(employee.id)" type="button" name="button" class="activation">Set Inactive</button></td>
     </tr>
 <!-- inactive table styling -->
     <tr ng-repeat="employee in ec.expendituresList.list" ng-hide="employee.active" ng-class="{ inactive: !employee.active }">
@@ -76,7 +74,7 @@
       <td>{{employee.job_title}}</td>
       <td>{{employee.annual_salary}}</td>
 <!-- button click listener/change-->
-      <td><button ng-click="ec.statusChangeActive(employee.id)" type="button" name="button">Set Active</button></td>
+      <td><button ng-click="ec.statusChangeActive(employee.id)" type="button" name="button" class="activation">Set Active</button></td>
     </tr>
   </table>
 </div>
