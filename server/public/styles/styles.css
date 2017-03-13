@@ -23,19 +23,23 @@ body {
   background-size: 100%;
 }
 
+/*main page heading*/
 h1{
   font-family: fantasy;
   text-align: center;
   font-size: 60px;
   margin-top: 50px;
   color: #24ee08;
+  text-shadow: 2px 2px #b4b4b4;
 }
 
+/*sun-title heading*/
 h3 {
   font-size: 30px;
   margin: 38px 0px 30px 20px;
   color: #24ee08;
   text-align: left;
+  text-shadow: 2px 2px #b4b4b4;
 }
 
 /*input div container*/
@@ -81,6 +85,7 @@ th {
   font-size: 20px;
   color: #24ee08;
   text-align: center;
+  text-decoration: underline;
 }
 
 /*employee data table*/
