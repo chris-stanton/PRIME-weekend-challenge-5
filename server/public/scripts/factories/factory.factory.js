@@ -29,6 +29,7 @@ myApp.factory('FactoryFactory', ['$http', function($http) {
       url: '/activeEmployees'
     }).then(function(response){
       activeEmployees.list = response.data;
+      getExpenditures();
     });
   }//end of getActive
 
@@ -38,8 +39,8 @@ myApp.factory('FactoryFactory', ['$http', function($http) {
       url: '/newEmployee',
       data: newEmployee
     }).then(function(response){
-       getExpenditures();
-       getActive();
+      getExpenditures();
+      getActive();
     });
   }//end of addEmployee
 
@@ -62,6 +63,8 @@ myApp.factory('FactoryFactory', ['$http', function($http) {
       getActive();
     });
   }//end of changeStatusInactive
+
+
 
 
 //////BUDGET VIEW is incomplete////////

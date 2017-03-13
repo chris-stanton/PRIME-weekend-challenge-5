@@ -35,23 +35,23 @@ router.get('/expenditures', function(req, res){
 
 //ADDs new employee to database
 router.post('/newEmployee', function(req,res){
-  console.log('hit post route');
+  console.log('post route');
   var employeeObject = req.body;
   pool.connect(function(err, client, done){
     if(err){
       res.sendStatus(500);
     } else {
       client.query('INSERT INTO employee_information (first_name, last_name, id_number, job_title, annual_salary) VALUES ($1, $2, $3, $4, $5);',
-    [employeeObject.first_name, employeeObject.last_name, employeeObject.id_number, employeeObject.job_title, employeeObject.annual_salary], function(err, result){
-      done();
-      if (err){
-        res.sendStatus(500);
-      } else {
-        res.status(200).send(result.rows);
-      }//end of else
-    });//end of  client.query()
-  }//end of else
-});//end of pool.connect()
+      [employeeObject.first_name, employeeObject.last_name, employeeObject.id_number, employeeObject.job_title, employeeObject.annual_salary], function(err, result){
+        done();
+        if (err){
+          res.sendStatus(500);
+        } else {
+          res.status(200).send(result.rows);
+        }//end of else
+      });//end of  client.query()
+    }//end of else
+  });//end of pool.connect()
 });//end of router.post()
 
 
@@ -74,7 +74,6 @@ router.get('/activeEmployees', function(req, res){
     }//end of else
   });//end of pool.connect()
 }); //end of router.get()
-
 
 
 /////////button active-inactive change///////////
@@ -105,7 +104,7 @@ router.put('/inactive/:id', function(req, res){
 //changes employees status to active
 router.put('/active/:id', function(req, res){
   var employeeStatusToChangeID = req.params.id;
-  console.log(req.params.id);
+  //console.log(req.params.id);
   pool.connect(function(err, client, done){
     if(err){
       console.log('error connecting to database')
@@ -149,9 +148,8 @@ router.get('/budget', function(req, res){
 
 //adds data to database
 router.post('/newBudget', function(req,res){
-  console.log('hit post route');
   var budgetObject = req.body;
-  console.log(budgetObject)
+  //console.log(budgetObject)
   pool.connect(function(err, client, done){
     if(err){
       console.log('error connecting to database')

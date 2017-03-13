@@ -9,16 +9,9 @@ CREATE TABLE employee_information (
     active BOOLEAN DEFAULT true
 );
 
--- SQL code to create table
-CREATE TABLE employee_budget (
-    id SERIAL PRIMARY KEY,
-    month varchar(30),
-    monthly_budget integer
-);
-
 
 -- hard coded data --
 INSERT INTO employee_information (first_name, last_name, id_number, job_title, annual_salary, active)
-VALUES ('Chris', 'Stanton', 123456, 'Boss', 123456, true),
+VALUES ('Chris', 'Stanton', 123456, 'King', 123456, true),
 ('Stephanie', 'Stanton', 234567, 'Queen', 234567, true);
 ('Gavin', 'Stanton', 00134, 'Laborer', 1200, false);

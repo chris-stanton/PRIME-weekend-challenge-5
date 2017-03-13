@@ -1,52 +1,44 @@
+
 <h1>Monthly Expenditures</h1>
-<!-- shows expediture and budget calculations on DOM -->
-<!-- <div>
-  <div>
-completed line / uncomment when bedget is complete
-    <h3>Budget (Monthly): {{ec.budget.list[0].monthly_budget}}</h3>
-  </div>
-  <div>
-    <h3>Total Expenditure (Monthly): {{ec.calculateExpenditure()}}</h3>
-  </div>
-</div> -->
+<form>
 <!-- inputs/button -->
-<div id="inputContainer">
+  <div id="inputContainer">
     <h3>Add New Employee:</h3>
 <!-- firstName -->
     <div class="inputDiv">
       <label>First Name</label><br>
-      <input ng-model="ec.newEmployee.first_name" placeholder="First Name" id="inputs">
+      <input ng-model="ec.newEmployee.first_name" id="inputs">
     </div>
 <!-- lastName -->
     <div class="inputDiv">
       <label>Last name</label><br>
-      <input ng-model="ec.newEmployee.last_name" placeholder = "Last Name" id="inputs">
+      <input ng-model="ec.newEmployee.last_name" id="inputs">
     </div>
 <!-- idNumber -->
     <div class="inputDiv">
       <label>ID Number</label><br>
-      <input ng-model="ec.newEmployee.id_number" placeholder="ID Number" id="inputs">
+      <input ng-model="ec.newEmployee.id_number" id="inputs">
     </div>
 <!-- jobTitle -->
     <div class="inputDiv">
       <label>Job Title</label><br>
-      <input ng-model="ec.newEmployee.job_title" placeholder="Job Title" id="inputs">
+      <input ng-model="ec.newEmployee.job_title" id="inputs">
     </div>
 <!-- annualSalary -->
     <div class="inputDiv">
       <label>Annual Salary</label><br>
-      <input ng-model="ec.newEmployee.annual_salary" placeholder="Annual Salary" id="inputs">
+      <input ng-model="ec.newEmployee.annual_salary" id="inputs">
     </div>
 <!-- submit employee -->
     <div class="submitButtonContainer">
       <button ng-click="ec.addEmployee()" id="submitButton">Submit Employee</button>
     </div>
-</div>
+  </div>
 <!-- employee activity view -->
 <div>
-  <h3>Employee Expenditure Chart:</h3>
+    <h3>Employee Expenditure Chart:</h3>
 <!-- container table from database-->
-  <table align = "center">
+  <table>
 <!-- table column titles -->
     <tr>
       <th>First Name</th>
@@ -78,3 +70,4 @@ completed line / uncomment when bedget is complete
     </tr>
   </table>
 </div>
+</form>
