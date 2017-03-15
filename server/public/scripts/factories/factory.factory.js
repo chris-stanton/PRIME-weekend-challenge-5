@@ -65,8 +65,6 @@ myApp.factory('FactoryFactory', ['$http', function($http) {
   }//end of changeStatusInactive
 
 
-
-
 //////BUDGET VIEW is incomplete////////
 //budget
   function getBudget(){

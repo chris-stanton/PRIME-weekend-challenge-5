@@ -7,7 +7,7 @@ myApp.controller('BudgetController', ['FactoryFactory', function(FactoryFactory)
   self.message = "Budget Controller";
   self.newBudget = {};
 
-//line sources to Factory.Factory.js
+//line sources from Factory.Factory.js to HTML view
   self.budget = FactoryFactory.monthlyBudget;
 
   self.addBudget = function(){

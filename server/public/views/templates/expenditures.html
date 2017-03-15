@@ -1,9 +1,10 @@
-
+<!-- main heading -->
 <h1>Monthly Expenditures</h1>
+<!-- form element is there to center content on page -->
 <form>
 <!-- inputs/button -->
   <div id="inputContainer">
-    <h3>Add New Employee:</h3>
+    <h3>Add New Employee: <div>{{expeditures.monthlyExpenditure}}</div></h3>
 <!-- firstName -->
     <div class="inputDiv">
       <label>First Name</label><br>
@@ -31,6 +32,7 @@
     </div>
 <!-- submit employee -->
     <div class="submitButtonContainer">
+<!-- try to use ng-sumbit so the return key will enter the data       -->
       <button ng-click="ec.addEmployee()" id="submitButton">Submit Employee</button>
     </div>
   </div>

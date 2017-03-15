@@ -1,7 +1,8 @@
 myApp.controller('ExpendituresController', ['FactoryFactory', function(FactoryFactory) {
-  // console.log('ExpendituresController');
+  //console.log('ExpendituresController');
  var self = this;
  self.message = 'Expenditures Controller';
+ //line sources from Factory.Factory.js to HTML view
  self.expendituresList = FactoryFactory.factoryExpenditures;
  self.activeEmployeeList = FactoryFactory.activeEmployees;
  self.montlyExpenditure = 0;
@@ -11,6 +12,8 @@ myApp.controller('ExpendituresController', ['FactoryFactory', function(FactoryFa
 //adds new employee to the database
 self.addEmployee = function(){
   FactoryFactory.addEmployee(self.newEmployee);
+//empties out input fields on submit
+  self.newEmployee = {};
 };// end of self.addEmployee
 
 //expenditure for all active eployees
@@ -32,8 +35,6 @@ self.statusChangeInactive = function(employeeID){
 self.statusChangeActive = function(employeeID){
   FactoryFactory.changeStatusActive(employeeID);
 };//end of self.statusChangeActive
-
-
 
 
 //budget WIP

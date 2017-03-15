@@ -6,10 +6,12 @@ var config = {
   host: 'localhost',
   port: '5432',
   max: 10,
-  idleTimeoutMillis: 30000
+//1.5 seconds idle
+  idleTimeoutMillis: 1500
 };
 
 var pool = new pg.Pool(config);
+//end of must have varaibles
 
 
 //GETs all employee info. from database
@@ -36,12 +38,14 @@ router.get('/expenditures', function(req, res){
 //ADDs new employee to database
 router.post('/newEmployee', function(req,res){
   console.log('post route');
+//req.body gets us an objest from the database
   var employeeObject = req.body;
   pool.connect(function(err, client, done){
     if(err){
       res.sendStatus(500);
     } else {
       client.query('INSERT INTO employee_information (first_name, last_name, id_number, job_title, annual_salary) VALUES ($1, $2, $3, $4, $5);',
+//req.body gives us the object below
       [employeeObject.first_name, employeeObject.last_name, employeeObject.id_number, employeeObject.job_title, employeeObject.annual_salary], function(err, result){
         done();
         if (err){
@@ -148,6 +152,7 @@ router.get('/budget', function(req, res){
 
 //adds data to database
 router.post('/newBudget', function(req,res){
+//req.body gets us an objest from the database
   var budgetObject = req.body;
   //console.log(budgetObject)
   pool.connect(function(err, client, done){
